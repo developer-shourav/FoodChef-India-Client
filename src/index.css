@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+/*-----------primary Color Plate--------- */
+.color-red{
+    color: #ec1c24;
+}
+.color-yellow{
+    color: #FDBD10;
+}
+.color-blue{
+    color:#0066B2;
+}
+.color-orange{
+    color:#ED7902;
+}
