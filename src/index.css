@@ -1,8 +1,21 @@
+
+/* ------Main Font---------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+/* ------Stylish Heading Font---------- */
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body{
+    font-family: 'Montserrat', sans-serif;
+}
 
+.heading-font-style{
+    font-family: 'Cookie', cursive;
+}
 
 /*-----------primary Color Plate--------- */
 .color-red{
