@@ -4,6 +4,8 @@ import {GiCook} from "react-icons/gi";
 import ChefCard from "../../components/ChefCard/ChefCard";
 import MenuCard from "../../components/MenuCard/MenuCard";
 import FoodGallery from "../../components/FoodGallery/FoodGallery";
+import StatusBar from "../../components/StatusBar/StatusBar";
+import BrandsListMarquee from "../../components/BrandsListMarquee/BrandsListMarquee";
 
 const Home = () => {
 
@@ -46,6 +48,10 @@ const Home = () => {
       
       <FoodGallery> </FoodGallery>
 
+      {/* -------- Status Bar and Brands  ----------*/}
+      <StatusBar> </StatusBar>
+
+      <BrandsListMarquee> </BrandsListMarquee>
       
     </div>
   );

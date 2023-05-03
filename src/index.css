@@ -53,3 +53,22 @@ footer  li:hover{
     color: #ec1c24;
     cursor: pointer;
 }
+
+.about-bg{
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+   }
+   .about-bg:hover{
+    background-color: black;
+    color: red;
+   }
+  
+   .brand-img > img{
+    display: inline;
+    width: 100px;
+    height: 80px;
+    margin : 0 20px ;
+  
+   }
