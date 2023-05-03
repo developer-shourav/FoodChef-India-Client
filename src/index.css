@@ -31,6 +31,9 @@ body{
     color:#ED7902;
 }
 
+.tertiary-bg{
+    background: #0066B2;
+}
 .google-btn-shadow{
     box-shadow: 1px 1px 5px 2px #14141442, -1px -1px 1px 1px rgba(0, 0, 0, 0.123);
    }

@@ -36,18 +36,18 @@ const Slider = () => {
       >
         <SwiperSlide> <div className='flex px-5 lg:px-0 flex-col-reverse md:flex-row my-4 md:my-8 lg:my-10 items-center justify-between'>
                <div className='md:w-1/2 lg:ps-10'>
-                <h1 className='font-bold text-3xl md:text-5xl my-2 md:mb-5'> Chose Our Top </h1>
-                <h1 className='font-bold text-2xl  md:text-4xl lg:text-6xl mb-5'> Crockeries Here </h1>
+                <h1 className='font-bold text-3xl md:text-5xl my-2 md:mb-5 color-red'>Chose The Best </h1>
+                <h1 className='font-bold text-2xl  md:text-4xl lg:text-6xl mb-5'> Signature Dish </h1>
                 
                 
-                <p className='md:w-3/4 text-gray-700 mb-5'>We stands for quality, authenticity, trust and satisfaction. We have a massive collection of products and brands that you will love.</p>
+                <p className='md:w-3/4 text-gray-700 mb-5'><strong>Biriyani.</strong> The Indian Dish you like most. The special rice. We have most expert Chef and various recipe on it. Try our awesome food item now.</p>
                 <button style={{background:'red'}} className='btn border-0 rounded-none px-8 '> Shop Now </button>
 
                  <div className=' mt-5 md:mt-10 font-bold flex gap-20'>
 
                    <div>
                      <h3 className=' text-2xl md:text-3xl'>1534+</h3>
-                     <p ><small>Total Products</small></p>
+                     <p ><small>Total Sells</small></p>
                    </div>
 
                    <div>
@@ -59,7 +59,7 @@ const Slider = () => {
                </div>
 
                <div className='md:w-1/2'>
-                <img  src={SliderImg1} alt="" />
+                <img className="rounded"  src={SliderImg1} alt="" />
                </div>
             </div></SwiperSlide>
 
@@ -68,8 +68,8 @@ const Slider = () => {
 
         <SwiperSlide> <div className='flex px-5 lg:px-0 flex-col-reverse md:flex-row my-4 md:my-8 lg:my-10 items-center justify-between'>
                <div className='md:w-1/2 lg:ps-10'>
-                <h1 className='font-bold text-3xl md:text-5xl my-2 md:mb-5'> Chose Our Top </h1>
-                <h1 className='font-bold text-2xl  md:text-4xl lg:text-6xl mb-5'> Crockeries Here </h1>
+                <h1 className='font-bold text-3xl md:text-5xl my-2 md:mb-5 color-red'> Chose Your Top </h1>
+                <h1 className='font-bold text-2xl  md:text-4xl lg:text-6xl mb-5'> Top Plater Here </h1>
                 
                 
                 <p className='md:w-3/4 text-gray-700 mb-5'>We stands for quality, authenticity, trust and satisfaction. We have a massive collection of products and brands that you will love.</p>
@@ -91,7 +91,7 @@ const Slider = () => {
                </div>
 
                <div className='md:w-1/2'>
-                <img  src={SliderImg2} alt="" />
+                <img  className="rounded" src={SliderImg2} alt="" />
                </div>
             </div>
             </SwiperSlide>
@@ -103,8 +103,8 @@ const Slider = () => {
         <SwiperSlide>
         <div className='flex px-5 lg:px-0 flex-col-reverse md:flex-row my-4 md:my-8 lg:my-10 items-center justify-between'>
                <div className='md:w-1/2 lg:ps-10'>
-                <h1 className='font-bold text-3xl md:text-5xl my-2 md:mb-5'> Chose Our Top </h1>
-                <h1 className='font-bold text-2xl  md:text-4xl lg:text-6xl mb-5'> Crockeries Here </h1>
+                <h1 className='font-bold text-3xl md:text-5xl my-2 md:mb-5 color-red'> Find More Than </h1>
+                <h1 className='font-bold text-2xl  md:text-4xl lg:text-6xl mb-5'> 200 Vag Recipes </h1>
                 
                 
                 <p className='md:w-3/4 text-gray-700 mb-5'>We stands for quality, authenticity, trust and satisfaction. We have a massive collection of products and brands that you will love.</p>
@@ -126,7 +126,7 @@ const Slider = () => {
                </div>
 
                <div className='md:w-1/2'>
-                <img  src={SliderImg3} alt="" />
+                <img className="rounded"  src={SliderImg3} alt="" />
                </div>
             </div>
         </SwiperSlide>
