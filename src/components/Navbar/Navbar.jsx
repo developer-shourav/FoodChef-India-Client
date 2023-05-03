@@ -28,15 +28,30 @@ const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
+                <div
+                  className="tooltip tooltip-bottom tooltip-primary"
+                  data-tip="Shourav"
+                >
+                  <div className="avatar online mx-2">
+                    <div className="w-12 rounded-full">
+                      <img src="https://lh3.googleusercontent.com/ogw/AOLn63H1dshlzYjGCCtxbSfpRjKxEpN1fOTUp1AEdv39=s32-c-mo" />
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
                 <NavLink to="/home">Home</NavLink>
               </li>
               <li>
                 <NavLink to="/blogs">Blog</NavLink>
               </li>
+              
             </ul>
           </div>
-          
-          <a className="   font-bold text-xl md:text-2xl w-full">FoodChef India</a>
+
+          <a className="   font-bold text-xl md:text-2xl w-full">
+            FoodChef India
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -62,20 +77,21 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end hidden md:flex">
+        <div className="navbar-end hidden md:flex items-center">
+          <Link to="/login" className="btn btn-primary">
+            Login
+          </Link>
 
-          <div className="tooltip tooltip-bottom tooltip-primary" data-tip="Shourav">
-
+          <div
+            className="tooltip tooltip-bottom tooltip-primary"
+            data-tip="Shourav"
+          >
             <div className="avatar online mx-2">
               <div className="w-12 rounded-full">
                 <img src="https://lh3.googleusercontent.com/ogw/AOLn63H1dshlzYjGCCtxbSfpRjKxEpN1fOTUp1AEdv39=s32-c-mo" />
               </div>
             </div>
           </div>
-
-          <Link to="/login" className="btn btn-primary">
-            Login
-          </Link>
         </div>
       </div>
     </div>
