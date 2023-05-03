@@ -21,10 +21,10 @@ const Home = () => {
 
       {/* --------Chefs Cards ----------*/}
 
-      <div className="container mx-auto my-32">
-        <h2 className="text-center mb-20"> <GiCook className="inline text-2xl" /> <span> Find Your Chef</span></h2>
+      <div className="container  mx-auto my-32">
+        <h2 className="text-center flex justify-center items-center mb-20"> <GiCook className="inline text-5xl color-red" /> <span className="font-bold text-3xl"> Find Your Chef</span></h2>
         <div>
-         <div className="grid grid-cols-2 lg:grid-cols-3">
+         <div className="grid mx-5 lg:mx-auto md:grid-cols-2 gap-8 lg:grid-cols-3">
 
           {
              allChefs?.map( chefData => <ChefCard
