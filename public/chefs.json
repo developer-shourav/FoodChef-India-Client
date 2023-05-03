@@ -1,7 +1,7 @@
  [
       {
         "id": 1,
-        "picture": "rajesh-gupta.jpg",
+        "picture": "https://i.ibb.co/Zd6yvT6/chef1.png",
         "name": "Rajesh Gupta",
         "experience": 15,
         "recipes": 50,
@@ -10,7 +10,7 @@
       },
       {
         "id": 2,
-        "picture": "sunita-patel.jpg",
+        "picture": "https://i.ibb.co/tDfKSYL/chef2.png",
         "name": "Sunita Patel",
         "experience": 10,
         "recipes": 30,
@@ -19,7 +19,7 @@
       },
       {
         "id": 3,
-        "picture": "amit-sharma.jpg",
+        "picture": "https://i.ibb.co/fXZ9WC6/chef3.png",
         "name": "Amit Sharma",
         "experience": 12,
         "recipes": 40,
@@ -28,7 +28,7 @@
       },
       {
         "id": 4,
-        "picture": "neha-singh.jpg",
+        "picture": "https://i.ibb.co/q0g3Z7X/chef4.png",
         "name": "Neha Singh",
         "experience": 7,
         "recipes": 25,
@@ -37,7 +37,7 @@
       },
       {
         "id": 5,
-        "picture": "kunal-mehta.jpg",
+        "picture": " https://i.ibb.co/nCn4FTP/chef6.png",
         "name": "Kunal Mehta",
         "experience": 8,
         "recipes": 20,
@@ -46,7 +46,7 @@
       },
       {
         "id": 6,
-        "picture": "deepak-verma.jpg",
+        "picture": "https://i.ibb.co/3BVTz1P/chef7.png",
         "name": "Deepak Verma",
         "experience": 9,
         "recipes": 35,
@@ -55,7 +55,7 @@
       },
       {
         "id": 7,
-        "picture": "sarika-choudhary.jpg",
+        "picture": "https://i.ibb.co/pnGRMs3/chef8.png",
         "name": "Sarika Choudhary",
         "experience": 6,
         "recipes": 18,
