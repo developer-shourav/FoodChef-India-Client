@@ -3,8 +3,7 @@ import Slider from "../../components/Slider/Slider";
 import {GiCook} from "react-icons/gi";
 import ChefCard from "../../components/ChefCard/ChefCard";
 import MenuCard from "../../components/MenuCard/MenuCard";
-
-
+import FoodGallery from "../../components/FoodGallery/FoodGallery";
 
 const Home = () => {
 
@@ -42,6 +41,11 @@ const Home = () => {
       {/* --------Menu Section ----------*/}
 
       <MenuCard> </MenuCard>
+
+      {/* -------- Our Food Gallery Section ----------*/}
+      
+      <FoodGallery> </FoodGallery>
+
       
     </div>
   );
