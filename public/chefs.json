@@ -1,0 +1,75 @@
+[
+      {
+        "id": 1,
+        "picture": "https://example.com/chef1.jpg",
+        "name": "Rajesh Gupta",
+        "years_of_experience": 15,
+        "num_of_recipes": 80,
+        "total_likes": 1200
+      },
+      {
+        "id": 2,
+        "picture": "https://example.com/chef2.jpg",
+        "name": "Sunita Patel",
+        "years_of_experience": 10,
+        "num_of_recipes": 60,
+        "total_likes": 800
+      },
+      {
+        "id": 3,
+        "picture": "https://example.com/chef3.jpg",
+        "name": "Amit Sharma",
+        "years_of_experience": 12,
+        "num_of_recipes": 70,
+        "total_likes": 1000
+      },
+      {
+        "id": 4,
+        "picture": "https://example.com/chef4.jpg",
+        "name": "Neha Singh",
+        "years_of_experience": 8,
+        "num_of_recipes": 50,
+        "total_likes": 600
+      },
+      {
+        "id": 5,
+        "picture": "https://example.com/chef5.jpg",
+        "name": "Kunal Mehta",
+        "years_of_experience": 6,
+        "num_of_recipes": 40,
+        "total_likes": 400
+      },
+      {
+        "id": 6,
+        "picture": "https://example.com/chef6.jpg",
+        "name": "Deepak Verma",
+        "years_of_experience": 9,
+        "num_of_recipes": 55,
+        "total_likes": 700
+      },
+      {
+        "id": 7,
+        "picture": "https://example.com/chef7.jpg",
+        "name": "Sarika Choudhary",
+        "years_of_experience": 7,
+        "num_of_recipes": 45,
+        "total_likes": 500
+      },
+      {
+        "id": 8,
+        "picture": "https://example.com/chef8.jpg",
+        "name": "Rahul Nair",
+        "years_of_experience": 11,
+        "num_of_recipes": 65,
+        "total_likes": 900
+      },
+      {
+        "id": 9,
+        "picture": "https://example.com/chef9.jpg",
+        "name": "Jyoti Desai",
+        "years_of_experience": 13,
+        "num_of_recipes": 75,
+        "total_likes": 1100
+      }
+    ]
+  

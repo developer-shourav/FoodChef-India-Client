@@ -10,3 +10,10 @@
 7. https://i.ibb.co/3BVTz1P/chef7.png
 8. https://i.ibb.co/pnGRMs3/chef8.png
 9. https://i.ibb.co/jhmf07M/chef9.webp
+
+
+
+### Chat GPT Comman for making Json of chef
+
+1. Give me 9 Chef cook's json data. Each Chef data will be with an unique id, Chef Picture, Chef Name, Years of experience, Numbers of recipes, total likes
+2. Please use indian name

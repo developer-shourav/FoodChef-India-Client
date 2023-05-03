@@ -16,7 +16,7 @@ const Home = () => {
           <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure>
               <img
-                src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                src="https://i.ibb.co/q0g3Z7X/chef4.png"
                 alt="Shoes"
               />
             </figure>
@@ -28,6 +28,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
