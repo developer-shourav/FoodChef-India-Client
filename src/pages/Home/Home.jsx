@@ -4,7 +4,10 @@ import Slider from '../../components/Slider/Slider';
 const Home = () => {
     return (
         <div>
+     {/*------------Top Banner---------- */}
             <Slider> </Slider>
+
+
         </div>
     );
 };

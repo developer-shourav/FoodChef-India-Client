@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="container mx-auto lg:pt-5">
-      <div className="navbar bg-base-100 ">
+    <div className="container mx-auto  shadow-md  mb-2 sticky z-50   top-0">
+      <div className="navbar bg-base-100 rounded ">
         <div className="md:navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -25,7 +25,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact font-bold dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
                 <div
@@ -43,6 +43,9 @@ const Navbar = () => {
                 <NavLink to="/home">Home</NavLink>
               </li>
               <li>
+                <NavLink to="/register">Register</NavLink>
+              </li>
+              <li>
                 <NavLink to="/blogs">Blog</NavLink>
               </li>
               
@@ -54,7 +57,7 @@ const Navbar = () => {
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 font-bold">
             <li>
               <NavLink
                 className={({ isActive }) =>
@@ -65,6 +68,17 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-red-500 bg-transparent" : ""
+                }
+                to="/register"
+              >
+                Register
+              </NavLink>
+            </li>
+
             <li>
               <NavLink
                 className={({ isActive }) =>

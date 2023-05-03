@@ -10,10 +10,10 @@ const Footer = () => {
                <div className=''>
                     <img className='w-20 mx-auto md:mx-0' src={Logo} alt="" />
                     <h3 style={{color:"red"}} className=' font-bold text-2xl mb-8 '>FoodChef India</h3>
-                    <li className='mb-3'>Nawabgong Convention Center,</li>
-                    <li className='mb-3'>Bagmara Bazar, Nawabgonj, Dhaka</li>
-                    <li className='mb-3'>Dhaka-1320</li>
-                    <li className='mb-3'>Bangladesh</li>
+                    <li className='mb-2'>Nawabgong Convention Center,</li>
+                    <li className='mb-2'>Bagmara Bazar, Nawabgonj, Delhi</li>
+                    <li className='mb-2'>Muslima-9320</li>
+                    <li className='mb-2'>India</li>
                 </div>
 
                 
@@ -23,6 +23,9 @@ const Footer = () => {
                     <li className='mb-3'>CATEGORY & PRODUCT</li>
                     <li className='mb-3'>Brands</li>
                     <li className='mb-3'>Export</li>
+                    <li className='mb-3'>Import</li>
+                    <li className='mb-3'>Shop</li>
+                    <li className='mb-3'>Hotel</li>
                 </div>
 
                 <div>
@@ -30,6 +33,8 @@ const Footer = () => {
                     <li className='mb-3'>Privacy</li>
                     <li className='mb-3'>Terms and Conditions</li>
                     <li className='mb-3'>FAQ</li>
+                    <li className='mb-3'>Blogs</li>
+                    <li className='mb-3'>Haring</li>
                 </div>
 
                 <div>
