@@ -1,7 +1,7 @@
 import React from 'react';
 import {BsArrowRight} from "react-icons/bs";
 import {AiFillHeart} from "react-icons/ai";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 const ChefCard = ({chefData}) => {
     const {id, name, picture, likes, experience, bio, recipes} = chefData;
     return (

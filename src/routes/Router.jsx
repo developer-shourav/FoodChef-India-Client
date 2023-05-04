@@ -17,6 +17,10 @@ const router = createBrowserRouter([
           path:'/',
           element:<Home> </Home>
         },
+        {
+          path:'/home',
+          element:<Home> </Home>
+        },
 
         {
           path:'/chefDetails/:id',
@@ -25,7 +29,8 @@ const router = createBrowserRouter([
 
         {
           path:'/blogs',
-          element:<Blogs> </Blogs>
+          element:<Blogs> </Blogs>,
+          loader: () => fetch('https://food-chef-india-server-developer-shourav.vercel.app/questionAns')
         },
 
         {

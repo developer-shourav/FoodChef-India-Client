@@ -43,6 +43,9 @@ const Navbar = () => {
                 <NavLink to="/home">Home</NavLink>
               </li>
               <li>
+                <NavLink to="/chefDetails/:id">Chef Recipes</NavLink>
+              </li>
+              <li>
                 <NavLink to="/register">Register</NavLink>
               </li>
               <li>
@@ -63,9 +66,19 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? "text-red-500 bg-transparent" : ""
                 }
-                to="/"
+                to="/home"
               >
                 Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-red-500 bg-transparent" : ""
+                }
+                to="/chefDetails/0"
+              >
+                Chef Recipes
               </NavLink>
             </li>
             <li>
