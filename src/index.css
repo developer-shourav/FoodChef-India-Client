@@ -72,3 +72,7 @@ footer  li:hover{
     margin : 0 20px ;
   
    }
+
+   .ingredients-style{
+    @apply red-bg py-1 px-2 rounded-xl text-white me-1 my-1 inline-block
+   }

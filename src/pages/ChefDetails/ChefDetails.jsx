@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import {AiFillHeart} from 'react-icons/ai';
-
+import {GiBowlOfRice} from 'react-icons/gi';
 const ChefDetails = () => {
     const [chefInfo , setChefInfo ] = useState([]);
 
@@ -17,9 +17,7 @@ const ChefDetails = () => {
         })
     },[])
 
-  /*   console.log(id);
     console.log(allRecipes);
-    console.log(chefInfo); */
 
     const {picture, likes, name, bio, recipes, experience } = chefInfo ;
     return (
@@ -39,6 +37,42 @@ const ChefDetails = () => {
                 </div>
 
               </div>
+            </div>
+
+            {/* ------Chef Recipe Section ------ */}
+            <div className='my-20 mx-2 md:mx-0'> 
+            <h2 className="text-center flex justify-center items-center mb-20"> <GiBowlOfRice className="inline text-5xl color-red" /> <span className="font-bold  md:text-3xl"> Top Recipes</span></h2>
+             
+             <div className='mt-10 grid md:grid-cols-3'>
+              <div className=' shadow-xl md:shadow-2xl rounded-md'>
+                <div>
+                <img src='https://i.ibb.co/RN7HRQG/rec1.jpg' alt="" />
+                </div>
+
+                <div className='ps-2 pb-3'>
+                    <h4 className='text-2xl mt-4 mb-2 text-bold'>recipe name</h4>
+                    <p className='border-b-4 border-orange-500 mb-2 inline-block text-lg font-bold'>Ingredients:</p>
+                    <p>
+                        <span className='ingredients-style'> ingredients</span>
+                        <span className='ingredients-style'> ingredients</span>
+                        <span className='ingredients-style'> ingredients</span>
+                        <span className='ingredients-style'> ingredients</span>
+                        <span className='ingredients-style'> ingredients</span>
+                        <span className='ingredients-style'> ingredients</span>
+                        <span className='ingredients-style'> ingredients</span>
+                    </p>
+                    <p className='py-2'><span className='font-bold'>Cooking Method:</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, est qui! Tempora nesciunt, sapiente dignissimos vero consequuntur nam quisquam! Sint qui commodi nostrum vel eos!</p>
+
+                    <div className='flex items-center justify-between mx-2 py-2 pe-2'> 
+                     <div>Rating: 5</div>
+                     <div>Add to favourite</div>
+                    </div>
+
+                </div>
+
+              </div>
+
+             </div>
             </div>
         </div>
     );
