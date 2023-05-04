@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Navbar = () => {
+  const {user, chefID} = useContext(AuthContext);
+  console.log(user);
+  console.log(chefID)
   return (
     <div className="container mx-auto  shadow-md  mb-2 sticky z-50   top-0">
       <div className="navbar bg-base-100 rounded ">
@@ -30,11 +34,11 @@ const Navbar = () => {
               <li>
                 <div
                   className="tooltip tooltip-bottom tooltip-primary"
-                  data-tip="Shourav"
+                  data-tip={user?.displayName}
                 >
                   <div className="avatar online mx-2">
                     <div className="w-12 rounded-full">
-                      <img src="https://lh3.googleusercontent.com/ogw/AOLn63H1dshlzYjGCCtxbSfpRjKxEpN1fOTUp1AEdv39=s32-c-mo" />
+                      <img src={user?.photoURL} />
                     </div>
                   </div>
                 </div>
@@ -42,9 +46,11 @@ const Navbar = () => {
               <li>
                 <NavLink to="/home">Home</NavLink>
               </li>
-              <li>
-                <NavLink to="/chefDetails">Chef Recipes</NavLink>
+              {
+                user &&  <li>
+                <NavLink to={`/chefDetails/${chefID}`}>Chef Recipes</NavLink>
               </li>
+              }
               <li>
                 <NavLink to="/register">Register</NavLink>
               </li>
@@ -71,16 +77,18 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-red-500 bg-transparent" : ""
-                }
-                to="/chefDetails"
-              >
-                Chef Recipes
-              </NavLink>
-            </li>
+           {
+            user &&  <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "text-red-500 bg-transparent" : ""
+              }
+              to={`/chefDetails/${chefID}`}
+            >
+              Chef Recipes
+            </NavLink>
+          </li>
+           }
             <li>
               <NavLink
                 className={({ isActive }) =>
@@ -109,16 +117,18 @@ const Navbar = () => {
             Login
           </Link>
 
-          <div
+          {
+            user && <div
             className="tooltip tooltip-bottom tooltip-primary"
-            data-tip="Shourav"
+            data-tip={user?.displayName}
           >
             <div className="avatar online mx-2">
               <div className="w-12 rounded-full">
-                <img src="https://lh3.googleusercontent.com/ogw/AOLn63H1dshlzYjGCCtxbSfpRjKxEpN1fOTUp1AEdv39=s32-c-mo" />
+              <img src={user?.photoURL} />
               </div>
             </div>
           </div>
+          }
         </div>
       </div>
     </div>

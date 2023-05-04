@@ -3,7 +3,11 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import {AiFillHeart} from 'react-icons/ai';
 import {GiBowlOfRice} from 'react-icons/gi';
 import RecipeCard from '../../components/RecipeCard/RecipeCard';
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProviders';
 const ChefDetails = () => {
+
+   const {setChefID} = useContext(AuthContext);
     const [chefInfo , setChefInfo ] = useState([]);
 
     const {id} = useParams();
@@ -16,6 +20,7 @@ const ChefDetails = () => {
         .then( data => {
             const specificChef = data.find( chef => chef.id == id );
             setChefInfo(specificChef)
+            setChefID(id)
         })
     },[])
 
