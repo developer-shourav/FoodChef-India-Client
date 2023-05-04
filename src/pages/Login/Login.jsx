@@ -9,7 +9,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 
 const Login = () => {
 
-  const {signInUserWithEmail} = useContext(AuthContext);
+const {signInUserWithEmail} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const redirectLocation = location.state?.from?.pathname || '/home';
@@ -51,15 +51,15 @@ const Login = () => {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" className="input input-bordered" />
+          <input type="email" placeholder="email" name='email' className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" className="input input-bordered" />
+          <input type="password" placeholder="password" name='password' className="input input-bordered" />
           <label className="label">
-            <small>New to FoodChef India? <Link to="/register" className='text-violet-600 font-bold underline'> Register</Link></small>
+            <small>New to FoodChef India? <Link to="/register" state={{from :location.state}} className='text-violet-600 font-bold underline'> Register</Link></small>
           </label>
         </div>
         <div className="form-control mt-6">

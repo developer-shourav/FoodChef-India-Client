@@ -3,9 +3,17 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Navbar = () => {
-  const {user, chefID} = useContext(AuthContext);
-  console.log(user);
-  console.log(chefID)
+  const {user, chefID, logOut} = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+    .then( () => {
+        console.log("logout Successfully");
+    })
+    .catch( error => {
+        console.log(error);
+    })
+  }
   return (
     <div className="container mx-auto  shadow-md  mb-2 sticky z-50   top-0">
       <div className="navbar bg-base-100 rounded ">
@@ -113,9 +121,13 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end hidden md:flex items-center">
-          <Link to="/login" className="btn btn-primary">
+          {
+            user ? <button onClick={handleLogOut} className="btn btn-primary bg-red-700 border-0">
+            Logout
+          </button> : <Link to="/login" className="btn btn-primary">
             Login
           </Link>
+          }
 
           {
             user && <div
