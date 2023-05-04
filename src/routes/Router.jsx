@@ -24,7 +24,8 @@ const router = createBrowserRouter([
 
         {
           path:'/chefDetails/:id',
-          element:<ChefDetails> </ChefDetails>
+          element:<ChefDetails> </ChefDetails>,
+          loader: ({params}) => fetch(`https://food-chef-india-server-developer-shourav.vercel.app/chefDetails/${params.id}`)
         },
 
         {

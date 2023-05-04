@@ -11,7 +11,7 @@ const Home = () => {
 
   const [allChefs, setAllChefs] = useState([]);
   useEffect(() => {
-    fetch('./chefs.json')
+    fetch('https://food-chef-india-server-developer-shourav.vercel.app/chefs')
     .then( res => res.json())
     .then( data => setAllChefs(data))
   }, [])
