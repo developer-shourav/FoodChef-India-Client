@@ -1,11 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BsKeyFill, BsGithub } from "react-icons/bs";
 import {FaFacebookF} from 'react-icons/fa';
 import LoginImg from "../../assets/svg/login.svg";
 import { RiShieldKeyholeFill } from "react-icons/ri";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleImg from '../../assets/icons/google.png';
+import { AuthContext } from '../../providers/AuthProviders';
+
 const Login = () => {
+
+  const {signInUserWithEmail} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const redirectLocation = location.state?.from?.pathname || '/home';
+
+  const handleEmailPassSignIn = event => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    signInUserWithEmail(email, password)
+    .then( result => {
+      const loggedInUser = result.user;
+      console.log(loggedInUser);
+      navigate(redirectLocation)
+      
+    })
+    .catch( error =>{
+      console.log( error)
+    })
+  }
+
     return (
         <div className='container  mx-auto'>
              <div className="w-11/12 mx-auto">
@@ -20,7 +46,7 @@ const Login = () => {
 
         <div className="md:w-10/12">
         <div className="card flex-shrink-0 w-full rounded-lg max-w-sm shadow-stone-400 shadow-md  bg-base-100">
-      <div className="card-body p-5">
+      <form onSubmit={handleEmailPassSignIn} className="card-body p-5">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -50,7 +76,7 @@ const Login = () => {
 
         <button className='btn normal-case bg-blue-600 mb-1  text-white rounded hover:bg-blue-500  shadow-sm border-0'> <FaFacebookF className=' text-2xl me-1'  /> Login with Facebook</button>
 
-      </div>
+      </form>
     </div>
         </div>
       </div>

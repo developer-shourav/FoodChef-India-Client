@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import Home from "../pages/Home/Home";
 import Blogs from "../pages/Blogs/Blogs";
 import ChefDetails from "../pages/ChefDetails/ChefDetails";
+import PrivetRoutes from "./PrivetRoutes";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
 
         {
           path:'/chefDetails/:id',
-          element:<ChefDetails> </ChefDetails>,
+          element:<PrivetRoutes> <ChefDetails> </ChefDetails> </PrivetRoutes>,
           loader: ({params}) => fetch(`https://food-chef-india-server-developer-shourav.vercel.app/chefDetails/${params.id}`)
         },
 
