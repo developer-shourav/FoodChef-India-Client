@@ -9,7 +9,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 
 const Login = () => {
 
-const {signInUserWithEmail, loginRegisterWithGoogle} = useContext(AuthContext);
+const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const redirectLocation = location.state?.from?.pathname || '/home';
@@ -34,6 +34,19 @@ const {signInUserWithEmail, loginRegisterWithGoogle} = useContext(AuthContext);
 
   const handleGoogleLogin = () => {
     loginRegisterWithGoogle()
+    .then( result => {
+      const loggedInUser = result.user;
+      console.log(loggedInUser);
+      navigate(redirectLocation)
+      
+    })
+    .catch( error =>{
+      console.log( error)
+    })
+  }
+
+  const handleGitHubLogin = () => {
+    loginRegisterWithGitHub()
     .then( result => {
       const loggedInUser = result.user;
       console.log(loggedInUser);
@@ -85,7 +98,7 @@ const {signInUserWithEmail, loginRegisterWithGoogle} = useContext(AuthContext);
 
         <button onClick={handleGoogleLogin} className='btn normal-case bg-white mb-1   text-black rounded hover:bg-slate-200 google-btn-shadow border-0'> <img className='w-6 me-2' src={GoogleImg} alt="" /> Login with Google</button>
 
-        <button className='btn normal-case text-white mb-1   bg-black rounded  shadow-sm border-0'> <BsGithub className=' text-2xl me-2'  /> Login with GitHub</button>
+        <button onClick={handleGitHubLogin} className='btn normal-case text-white mb-1   bg-black rounded  shadow-sm border-0'> <BsGithub className=' text-2xl me-2'  /> Login with GitHub</button>
 
         <button className='btn normal-case bg-blue-600 mb-1  text-white rounded hover:bg-blue-500  shadow-sm border-0'> <FaFacebookF className=' text-2xl me-1'  /> Login with Facebook</button>
 
