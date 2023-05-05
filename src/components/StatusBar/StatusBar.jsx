@@ -1,6 +1,8 @@
 import React from 'react';
 
 const StatusBar = () => {
+
+  /* -------------Website Status Bar Component-------------- */
     return (
         <div className="hidden md:block md:py-6 lg:py-10 about-bg my-5 shadow-red-700 shadow-md">
 

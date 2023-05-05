@@ -10,6 +10,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+  
+  /* -----Toast For Showing Facebook login Error message---------- */
   const notify = () => toast.error("Sorry 😓, Facebook login isn't working. Please try others");
 
 const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = useContext(AuthContext);
@@ -18,11 +20,14 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
   const redirectLocation = location.state?.from?.pathname || '/home';
 
   const handleEmailPassSignIn = event => {
+    /* ------ Handle default page reload on form submit-------- */
     event.preventDefault();
+    /* ------- Data Collection from The Data FORM element-------------- */
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
 
+  /* ------- Email password Login System Code-------------- */
     signInUserWithEmail(email, password)
     .then( result => {
       const loggedInUser = result.user;
@@ -34,7 +39,7 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
       console.log( error)
     })
   }
-
+/* ------- Google Login System Code-------------- */
   const handleGoogleLogin = () => {
     loginRegisterWithGoogle()
     .then( result => {
@@ -48,6 +53,7 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
     })
   }
 
+/* ------- GitHub Login System Code-------------- */
   const handleGitHubLogin = () => {
     loginRegisterWithGitHub()
     .then( result => {

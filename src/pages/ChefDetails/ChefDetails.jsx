@@ -24,8 +24,8 @@ const ChefDetails = () => {
         })
     },[])
 
-    console.log(allRecipes);
 
+     /* --------Chef's Data ------------ */
     const {picture, likes, name, bio, recipes, experience } = chefInfo ;
     return (
         <div className='container mx-auto md:my-10'>

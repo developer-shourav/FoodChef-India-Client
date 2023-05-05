@@ -39,6 +39,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-compact font-bold dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
+              {/* ------------Styles of Small devices--------------- */}
               <li>
                 <div
                   className="tooltip tooltip-bottom tooltip-primary"
@@ -73,6 +74,7 @@ const Navbar = () => {
             FoodChef India
           </a>
         </div>
+        {/* ------------Style for large Device-------- */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 font-bold">
             <li>

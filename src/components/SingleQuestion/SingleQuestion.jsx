@@ -6,7 +6,8 @@ const SingleQuestion = (props) => {
     <div className="shadow-lg py-4 rounded-lg border">
       <div className="collapse">
         <input type="checkbox" />
-
+         
+         {/* --------Blog Question and Answer------------- */}
 
         <div className="collapse-title text-xl  font-medium text-black">
           <div className="flex items-center justify-between">

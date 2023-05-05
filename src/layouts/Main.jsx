@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
 
 const Main = () => {
+    /* -----------Website Main Layout-------------- */
     return (
         <div>
             <Navbar> </Navbar>

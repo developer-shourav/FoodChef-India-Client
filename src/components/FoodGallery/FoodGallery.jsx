@@ -9,6 +9,8 @@ const FoodGallery = () => {
     return (
         <div className="container   mx-auto my-32">
         <h2 className="text-center flex justify-center items-center mb-20"> <span className="font-bold text-2xl md:text-3xl"> Our Food Gallery </span></h2>
+        
+        {/* -----------Food Gallery Images--------------- */}
         <div>
          <div className="grid mx-5 lg:mx-auto grid-cols-2 md:grid-cols-3 gap-1">
 

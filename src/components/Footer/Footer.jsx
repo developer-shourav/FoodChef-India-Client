@@ -8,6 +8,7 @@ const Footer = () => {
                <div className='grid text-center md:text-left grid-cols-1 md:grid-cols-4 gap-4'>
                 
                <div className=''>
+                {/* --------Footer Logo ----------- */}
                     <img className='w-20 mx-auto md:mx-0' src={Logo} alt="" />
                     <h3 style={{color:"red"}} className=' font-bold text-2xl mb-8 '>FoodChef India</h3>
                     <li className='mb-2'>Nawabgong Convention Center,</li>

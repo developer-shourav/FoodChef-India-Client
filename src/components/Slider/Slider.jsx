@@ -19,6 +19,8 @@ import SliderImg3 from '../../assets/slider-img/slider3.jpg'
 const Slider = () => {
     return (
         <div className="container mx-auto">
+
+          {/* ----------------Website Top Banner Slider --------------------- */}
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -34,6 +36,7 @@ const Slider = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
+        {/* ----------------Website Top Banner Slider Item One --------------------- */}
         <SwiperSlide> <div className='flex px-5 lg:px-0 flex-col-reverse md:flex-row my-4 md:my-8 lg:my-10 items-center justify-between'>
                <div className='md:w-1/2 lg:ps-10'>
                 <h1 className='font-bold text-3xl md:text-5xl my-2 md:mb-5 color-red'>Chose The Best </h1>
@@ -65,7 +68,7 @@ const Slider = () => {
 
 
 
-
+   {/* ----------------Website Top Banner Slider Item Two --------------------- */}
         <SwiperSlide> <div className='flex px-5 lg:px-0 flex-col-reverse md:flex-row my-4 md:my-8 lg:my-10 items-center justify-between'>
                <div className='md:w-1/2 lg:ps-10'>
                 <h1 className='font-bold text-3xl md:text-5xl my-2 md:mb-5 color-red'> Chose Your Top </h1>
@@ -99,7 +102,7 @@ const Slider = () => {
 
 
 
-        
+        {/* ----------------Website Top Banner Slider Item Three --------------------- */}
         <SwiperSlide>
         <div className='flex px-5 lg:px-0 flex-col-reverse md:flex-row my-4 md:my-8 lg:my-10 items-center justify-between'>
                <div className='md:w-1/2 lg:ps-10'>

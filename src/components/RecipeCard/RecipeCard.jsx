@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeCard = ({item}) => {
+    /* -----Toast for Favorite Button----------- */
     const notify = () => toast.success("Successfully add as your favorite");
     const {recipe_name, ingredients, method, rating, recipe_img} = item ;
     const [buttonDisabled, setButtonDisabled] = useState(false)
@@ -14,6 +15,7 @@ const RecipeCard = ({item}) => {
         notify()
     }
     return (
+        /* --------------Chefs Food Recipes Card---------------- */
         <div className=' shadow-xl md:shadow-2xl rounded-md'>
         <div>
         <img src={recipe_img} alt="" />

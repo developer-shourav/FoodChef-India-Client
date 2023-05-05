@@ -4,6 +4,8 @@ import {AiFillHeart} from "react-icons/ai";
 import { Link, NavLink } from 'react-router-dom';
 const ChefCard = ({chefData}) => {
     const {id, name, picture, likes, experience, recipes} = chefData;
+
+    /* --------Individual Card For Each Chef---------- */
     return (
         <div className="card card-compact bg-base-100 rounded-lg shadow-lg">
         <div className='bg-red-100 rounded-lg'>

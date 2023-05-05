@@ -9,6 +9,7 @@ const MenuCard = () => {
         <div className="container   mx-auto my-32">
         <h2 className="text-center flex justify-center items-center mb-20"> <FaClipboardList className="inline text-5xl color-red" /> <span className="font-bold  md:text-3xl"> Our Menu</span></h2>
         <div>
+          {/* -----------Our Menu Card's Parent Section------------ */}
          <div className="grid mx-5 lg:mx-auto md:grid-cols-4 gap-3 ">
 
           <div className="p-5  bg-red-200 rounded-tl-3xl rounded-br-3xl">

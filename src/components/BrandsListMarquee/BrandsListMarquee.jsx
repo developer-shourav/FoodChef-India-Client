@@ -1,5 +1,6 @@
 import React from 'react';
 import Marquee from "react-fast-marquee";
+/* -------------All Imported Images-------------- */
 import BrandLogo1 from '../../assets/brand-img/1.png';
 import BrandLogo2 from '../../assets/brand-img/2.png';
 import BrandLogo3 from '../../assets/brand-img/3.png';
@@ -13,6 +14,7 @@ const BrandsListMarquee = () => {
     return (
         <div className='container mx-auto mt-10 hidden md:block '>
             <h3 className='text-center font-bold text-gray-600 mb-10 text-3xl'> We have Chef from</h3>
+            {/* -------------All Brands With Picture------------ */}
             <Marquee pauseOnHover={true} speed={60} gradient={true}> 
                 <div className='brand-img'>
                     <img src={BrandLogo1} alt="" />

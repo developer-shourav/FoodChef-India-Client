@@ -18,7 +18,9 @@ const Register = () => {
   const redirectLocation = location?.state?.from?.pathname || '/home';
 
   const handleRegister = (event) => {
+      /* ------ Handle default page reload on form submit-------- */
     event.preventDefault();
+    /* ------- Data Collection from The Data FORM element-------------- */
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
@@ -26,8 +28,7 @@ const Register = () => {
     const photo = form.photo.value;
     const finalPassword = form.finalPassword.value;
 
-    console.log({name}, {email}, {password}, {photo}, {finalPassword});
-
+ /* ------- Email password User creation System Code-------------- */
     createEmailPassUser(email, password)
       .then((result) => {
         const createdUser = result.user;
@@ -39,7 +40,7 @@ const Register = () => {
         console.log(error.massage);
       });
   };
-
+/* ------- User name and Profile picture updating Code-------------- */
   const addUserNameAndImage = (user, userName, imageUrl) => {
     updateProfile(user, { displayName: userName, photoURL: imageUrl })
       .then(() => {
@@ -51,6 +52,7 @@ const Register = () => {
       });
   };
 
+  /* ------- Google Register Function's Code-------------- */
   const handleGoogleRegister = () => {
     loginRegisterWithGoogle()
     .then( result => {
@@ -63,7 +65,7 @@ const Register = () => {
       console.log( error)
     })
   }
-
+/* ------- GitHub Register System Code-------------- */
   const handleGitHubRegister = () => {
     loginRegisterWithGitHub()
     .then( result => {
