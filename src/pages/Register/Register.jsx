@@ -8,7 +8,7 @@ import GoogleImg from "../../assets/icons/google.png";
 import { AuthContext } from "../../providers/AuthProviders";
 import { updateProfile } from "firebase/auth";
 const Register = () => {
-  const { createEmailPassUser, loginRegisterWithGoogle } = useContext(AuthContext);
+  const { createEmailPassUser, loginRegisterWithGoogle, loginRegisterWithGitHub } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);
@@ -50,6 +50,19 @@ const Register = () => {
 
   const handleGoogleRegister = () => {
     loginRegisterWithGoogle()
+    .then( result => {
+      const loggedInUser = result.user;
+      console.log(loggedInUser);
+      navigate(redirectLocation)
+      
+    })
+    .catch( error =>{
+      console.log( error)
+    })
+  }
+
+  const handleGitHubRegister = () => {
+    loginRegisterWithGitHub()
     .then( result => {
       const loggedInUser = result.user;
       console.log(loggedInUser);
@@ -174,7 +187,7 @@ const Register = () => {
                   with Google
                 </button>
 
-                <button className="btn normal-case text-white mb-1   bg-black rounded  shadow-sm border-0">
+                <button onClick={handleGitHubRegister} className="btn normal-case text-white mb-1   bg-black rounded  shadow-sm border-0">
                   {" "}
                   <BsGithub className=" text-2xl me-2" /> Register with GitHub
                 </button>
