@@ -2,6 +2,7 @@ import React from 'react';
 import {BsArrowRight} from "react-icons/bs";
 import {AiFillHeart} from "react-icons/ai";
 import { Link, NavLink,  } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 const ChefCard = ({chefData}) => {
     const {id, name, picture, likes, experience, recipes} = chefData;
 
@@ -10,11 +11,14 @@ const ChefCard = ({chefData}) => {
         <div className="card card-compact bg-base-100 rounded-lg shadow-lg">
         
         <div className='bg-red-100 rounded-lg'>
+          {/* -------Using Image Lazy Loading------------ */}
+          <LazyLoad  offset={300} threshold={0.95}> 
           <img
             src={picture}
             className='w-1/2 mx-auto md:h-60 drop-shadow-xl '
             alt="Chef image"
           />
+          </LazyLoad>
         </div>
         <div className="card-body  ">
           <h3 className="text-xl font-semibold ">Name: {name}</h3>

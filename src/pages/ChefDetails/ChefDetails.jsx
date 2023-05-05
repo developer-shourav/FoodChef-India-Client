@@ -5,6 +5,7 @@ import {GiBowlOfRice} from 'react-icons/gi';
 import RecipeCard from '../../components/RecipeCard/RecipeCard';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProviders';
+import LazyLoad from 'react-lazy-load';
 const ChefDetails = () => {
 
    const {setChefID} = useContext(AuthContext);
@@ -31,7 +32,10 @@ const ChefDetails = () => {
         <div className='container mx-auto md:my-10'>
             <div className='flex flex-col md:flex-row mx-5  lg:mx-auto gap-3 lg:gap-6'>
               <div className='bg-red-200 md:w-1/2 rounded-md'>
+                 {/* -------Using Image Lazy Loading------------ */}
+                <LazyLoad offset={300} threshold={0.95}> 
                 <img src={picture} className=' pt-5  mx-auto h-72 md:h-96 drop-shadow-lg' alt="" />
+                </LazyLoad>
               </div>
 
               <div className='md:w-1/2'>

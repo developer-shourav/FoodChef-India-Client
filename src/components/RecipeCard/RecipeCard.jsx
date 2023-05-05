@@ -3,6 +3,7 @@ import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import LazyLoad from 'react-lazy-load';
 
 const RecipeCard = ({item}) => {
     /* -----Toast for Favorite Button----------- */
@@ -18,7 +19,11 @@ const RecipeCard = ({item}) => {
         /* --------------Chefs Food Recipes Card---------------- */
         <div className=' shadow-xl md:shadow-2xl rounded-md'>
         <div>
-        <img src={recipe_img} alt="" />
+             {/* -------Using Image Lazy Loading------------ */}
+            <LazyLoad  offset={300} threshold={0.95}> 
+            <img src={recipe_img} alt="" />
+            </LazyLoad>
+        
         </div>
 
         <div className='ps-2 pb-3'>
