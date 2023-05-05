@@ -8,6 +8,7 @@ import GoogleImg from '../../assets/icons/google.png';
 import { AuthContext } from '../../providers/AuthProviders';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
 
 const Login = () => {
   
@@ -19,7 +20,13 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
   const location = useLocation();
   const redirectLocation = location.state?.from?.pathname || '/home';
 
+  const [errorMessage, setErrorMessage] = useState('');
+
   const handleEmailPassSignIn = event => {
+
+    /*----- Reset Error Massage field------- */
+    setErrorMessage('')
+
     /* ------ Handle default page reload on form submit-------- */
     event.preventDefault();
     /* ------- Data Collection from The Data FORM element-------------- */
@@ -36,7 +43,7 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
       
     })
     .catch( error =>{
-      console.log( error)
+      setErrorMessage(error.message.slice(10))
     })
   }
 /* ------- Google Login System Code-------------- */
@@ -44,12 +51,11 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
     loginRegisterWithGoogle()
     .then( result => {
       const loggedInUser = result.user;
-      console.log(loggedInUser);
       navigate(redirectLocation)
       
     })
     .catch( error =>{
-      console.log( error)
+      setErrorMessage(error.message.slice(10))
     })
   }
 
@@ -58,12 +64,11 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
     loginRegisterWithGitHub()
     .then( result => {
       const loggedInUser = result.user;
-      console.log(loggedInUser);
       navigate(redirectLocation)
       
     })
     .catch( error =>{
-      console.log( error)
+      setErrorMessage(error.message.slice(10))
     })
   }
 
@@ -97,6 +102,9 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
             <small>New to FoodChef India? <Link to="/register" state={{from :location?.state?.from}} className='text-violet-600 font-bold underline'> Register</Link></small>
           </label>
         </div>
+
+        {/* --------Error Message section -------- */}
+        <p className='text-red-500 font-semibold'>{errorMessage}</p>
         <div className="form-control mt-6">
           <button  style={{ background: "red" }}
               className="btn rounded border-0 shadow-red-500 shadow-md"> <BsKeyFill className='me-1 text-xl'/> Login </button>
