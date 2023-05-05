@@ -3,13 +3,16 @@ import { BsPersonFillAdd, BsGithub } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import RegisterImg from "../../assets/svg/register.svg";
 import { AiOutlineUserAdd } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleImg from "../../assets/icons/google.png";
 import { AuthContext } from "../../providers/AuthProviders";
 import { updateProfile } from "firebase/auth";
 const Register = () => {
   const { createEmailPassUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+  const redirectLocation = location?.state?.from?.pathname || '/home';
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -38,7 +41,7 @@ const Register = () => {
     updateProfile(user, { displayName: userName, photoURL: imageUrl })
       .then(() => {
         console.log("User update successful");
-        navigate("/home");
+        navigate(redirectLocation);
       })
       .catch((error) => {
         console.log(error);

@@ -10,7 +10,7 @@ const AuthProviders = ({children}) => {
     
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [chefID, setChefID] = useState(null)
+    const [chefID, setChefID] = useState(1)
 
     
     const createEmailPassUser = ( email, password) => {
@@ -22,6 +22,7 @@ const AuthProviders = ({children}) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
+
 
     const logOut = () => {
         setLoading(true);

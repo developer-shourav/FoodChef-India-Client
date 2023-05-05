@@ -59,7 +59,7 @@ const {signInUserWithEmail} = useContext(AuthContext);
           </label>
           <input type="password" placeholder="password" name='password' className="input input-bordered" />
           <label className="label">
-            <small>New to FoodChef India? <Link to="/register" state={{from :location.state}} className='text-violet-600 font-bold underline'> Register</Link></small>
+            <small>New to FoodChef India? <Link to="/register" state={{from :location?.state?.from}} className='text-violet-600 font-bold underline'> Register</Link></small>
           </label>
         </div>
         <div className="form-control mt-6">
