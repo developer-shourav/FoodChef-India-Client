@@ -75,7 +75,6 @@ const Register = () => {
     loginRegisterWithGoogle()
     .then( result => {
       const loggedInUser = result.user;
-      console.log(loggedInUser);
       navigate(redirectLocation)
       
     })
@@ -89,7 +88,6 @@ const Register = () => {
     loginRegisterWithGitHub()
     .then( result => {
       const loggedInUser = result.user;
-      console.log(loggedInUser);
       navigate(redirectLocation)
       
     })

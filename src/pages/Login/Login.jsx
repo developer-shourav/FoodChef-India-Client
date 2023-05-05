@@ -38,7 +38,6 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
     signInUserWithEmail(email, password)
     .then( result => {
       const loggedInUser = result.user;
-      console.log(loggedInUser);
       navigate(redirectLocation)
       
     })
