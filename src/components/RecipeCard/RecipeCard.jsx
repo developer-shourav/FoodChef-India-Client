@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeCard = ({item}) => {
+    const notify = () => toast.success("Successfully add as your favorite");
     const {recipe_name, ingredients, method, rating, recipe_img} = item ;
+    const [buttonDisabled, setButtonDisabled] = useState(false)
+
+    const handleClick = () => {
+        setButtonDisabled(true)
+        notify()
+    }
     return (
         <div className=' shadow-xl md:shadow-2xl rounded-md'>
         <div>
@@ -16,11 +27,13 @@ const RecipeCard = ({item}) => {
                     ingredients.map( ingredient => <span key={ingredient} className='ingredients-style'> {ingredient}</span>)
                 }
             </div>
-            <p className='p-2 text-gray-600'><span className='font-bold text-gray-700'>Cooking Method:</span> {method}</p>
+            <p className='p-2 text-gray-600'><span className='font-bold text-gray-700'>Cooking Method:</span> {method.length > 250 ? method.slice(1, 250) : method } <span className='text-blue-500'>see more..</span> </p>
 
-            <div className='flex items-center justify-between mx-2 py-2 pe-2'> 
-             <div>Rating: {rating}</div>
-             <div>Add to favourite</div>
+            <div className='flex items-center mt-auto justify-between mx-2 py-2 pe-2'> 
+             <div className='flex'> <Rating style={{ maxWidth: 120 }} value={rating} readOnly /> <span className='ms-2 font-bold text-gray-600'>{rating}</span></div>
+
+             <button onClick={handleClick} disabled={buttonDisabled} className='btn btn-info '>Add to favorite</button>
+             <ToastContainer/>
             </div>
 
         </div>
