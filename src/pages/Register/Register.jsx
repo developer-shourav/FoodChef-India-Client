@@ -8,7 +8,7 @@ import GoogleImg from "../../assets/icons/google.png";
 import { AuthContext } from "../../providers/AuthProviders";
 import { updateProfile } from "firebase/auth";
 const Register = () => {
-  const { createEmailPassUser } = useContext(AuthContext);
+  const { createEmailPassUser, loginRegisterWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);
@@ -47,6 +47,19 @@ const Register = () => {
         console.log(error);
       });
   };
+
+  const handleGoogleRegister = () => {
+    loginRegisterWithGoogle()
+    .then( result => {
+      const loggedInUser = result.user;
+      console.log(loggedInUser);
+      navigate(redirectLocation)
+      
+    })
+    .catch( error =>{
+      console.log( error)
+    })
+  }
 
   return (
     <div className="container mx-auto ">
@@ -155,7 +168,7 @@ const Register = () => {
                   <hr className="inline-block border-1 w-full border-red-400" />
                 </div>
 
-                <button className="btn normal-case bg-white mb-1   text-black rounded hover:bg-slate-200 google-btn-shadow border-0">
+                <button onClick={handleGoogleRegister} className="btn normal-case bg-white mb-1   text-black rounded hover:bg-slate-200 google-btn-shadow border-0">
                   {" "}
                   <img className="w-6 me-2" src={GoogleImg} alt="" /> Register
                   with Google
