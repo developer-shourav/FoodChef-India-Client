@@ -48,6 +48,7 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
   }
 /* ------- Google Login System Code-------------- */
   const handleGoogleLogin = () => {
+    setErrorMessage('')
     loginRegisterWithGoogle()
     .then( result => {
       const loggedInUser = result.user;
@@ -61,6 +62,7 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
 
 /* ------- GitHub Login System Code-------------- */
   const handleGitHubLogin = () => {
+    setErrorMessage('')
     loginRegisterWithGitHub()
     .then( result => {
       const loggedInUser = result.user;

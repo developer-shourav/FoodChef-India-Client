@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { BsPersonFillAdd, BsGithub } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import RegisterImg from "../../assets/svg/register.svg";
@@ -16,8 +16,11 @@ const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const redirectLocation = location?.state?.from?.pathname || '/home';
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleRegister = (event) => {
+    /*----- Reset Error Massage field------- */
+    setErrorMessage('')
       /* ------ Handle default page reload on form submit-------- */
     event.preventDefault();
     /* ------- Data Collection from The Data FORM element-------------- */
@@ -28,32 +31,47 @@ const Register = () => {
     const photo = form.photo.value;
     const finalPassword = form.finalPassword.value;
 
- /* ------- Email password User creation System Code-------------- */
-    createEmailPassUser(email, password)
-      .then((result) => {
-        const createdUser = result.user;
-        console.log(createdUser);
-        addUserNameAndImage(result.user, name, photo);
-      })
+    if( password !== finalPassword){
+     
+      setErrorMessage("Error: Your 'password' and 'Confirm password' doesn't match ")
+      return ;
+    }
+    if( password.length < 6 || finalPassword.length < 6){
+     
+      setErrorMessage('Error: Your Password must be at least 6 character')
+      return ;
+    }
 
-      .catch((error) => {
-        console.log(error.massage);
-      });
+    else{
+       /* ------- Email password User creation System Code-------------- */
+    createEmailPassUser(email, password)
+    .then((result) => {
+      const createdUser = result.user;
+      addUserNameAndImage(result.user, name, photo);
+    })
+
+    .catch((error) => {
+      setErrorMessage(error.message.slice(10))
+    });
+    }
+ 
+
   };
 /* ------- User name and Profile picture updating Code-------------- */
   const addUserNameAndImage = (user, userName, imageUrl) => {
+    setErrorMessage('')
     updateProfile(user, { displayName: userName, photoURL: imageUrl })
       .then(() => {
-        console.log("User update successful");
         navigate(redirectLocation);
       })
       .catch((error) => {
-        console.log(error);
+        setErrorMessage(error.message.slice(10))
       });
   };
 
   /* ------- Google Register Function's Code-------------- */
   const handleGoogleRegister = () => {
+    setErrorMessage('')
     loginRegisterWithGoogle()
     .then( result => {
       const loggedInUser = result.user;
@@ -62,11 +80,12 @@ const Register = () => {
       
     })
     .catch( error =>{
-      console.log( error)
+      setErrorMessage(error.message.slice(10))
     })
   }
 /* ------- GitHub Register System Code-------------- */
   const handleGitHubRegister = () => {
+    setErrorMessage('')
     loginRegisterWithGitHub()
     .then( result => {
       const loggedInUser = result.user;
@@ -75,7 +94,7 @@ const Register = () => {
       
     })
     .catch( error =>{
-      console.log( error)
+      setErrorMessage(error.message.slice(10))
     })
   }
 
@@ -171,6 +190,8 @@ const Register = () => {
                     </small>
                   </label>
                 </div>
+                 {/* --------Error Message section -------- */}
+                <p className='text-red-500 font-semibold'>{errorMessage}</p>
                 <div className="form-control mt-6">
                   <button
                     style={{ background: "red" }}
