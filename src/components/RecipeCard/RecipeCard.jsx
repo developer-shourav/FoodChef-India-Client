@@ -29,7 +29,7 @@ const RecipeCard = ({item}) => {
                     ingredients.map( ingredient => <span key={ingredient} className='ingredients-style'> {ingredient}</span>)
                 }
             </div>
-            <p className='p-2 text-gray-600'><span className='font-bold text-gray-700'>Cooking Method:</span> {method.length > 250 ? method.slice(1, 250) : method } <span className='text-blue-500'>see more..</span> </p>
+            <p className='p-2 text-gray-600'><span className='font-bold text-gray-700'>Cooking Method:</span> {method.length > 290 ? method.slice(0, 290) : method } </p>
 
             <div className='flex items-center mt-auto justify-between mx-2 py-2 pe-2'> 
              <div className='flex'> <Rating style={{ maxWidth: 120 }} value={rating} readOnly /> <span className='ms-2 font-bold text-gray-600'>{rating}</span></div>

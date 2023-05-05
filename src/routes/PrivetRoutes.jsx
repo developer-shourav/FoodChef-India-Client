@@ -2,7 +2,8 @@ import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProviders';
 import { Navigate, useLocation } from 'react-router-dom';
-import Loader from '../assets/loader/loader.gif';
+import SpinnerLoader from '../components/SpinnerLoader/SpinnerLoader';
+
 
 const PrivetRoutes = ({children}) => {
 
@@ -12,7 +13,7 @@ const PrivetRoutes = ({children}) => {
 
 /* --------- Loading component---------- */
     if(loading){
-        return <div className='flex items-center justify-center mt-10'><img className='w-20 md:w-28' src={Loader} alt="" /></div>
+        return <SpinnerLoader> </SpinnerLoader>
     }
 
     if(user){
