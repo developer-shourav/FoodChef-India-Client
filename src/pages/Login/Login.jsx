@@ -9,7 +9,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 
 const Login = () => {
 
-const {signInUserWithEmail} = useContext(AuthContext);
+const {signInUserWithEmail, loginRegisterWithGoogle} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const redirectLocation = location.state?.from?.pathname || '/home';
@@ -21,6 +21,19 @@ const {signInUserWithEmail} = useContext(AuthContext);
     const password = form.password.value;
 
     signInUserWithEmail(email, password)
+    .then( result => {
+      const loggedInUser = result.user;
+      console.log(loggedInUser);
+      navigate(redirectLocation)
+      
+    })
+    .catch( error =>{
+      console.log( error)
+    })
+  }
+
+  const handleGoogleLogin = () => {
+    loginRegisterWithGoogle()
     .then( result => {
       const loggedInUser = result.user;
       console.log(loggedInUser);
@@ -51,13 +64,13 @@ const {signInUserWithEmail} = useContext(AuthContext);
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" name='email' className="input input-bordered" />
+          <input type="email" placeholder="email" name='email' className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" name='password' className="input input-bordered" />
+          <input type="password" placeholder="password" name='password' required className="input input-bordered" />
           <label className="label">
             <small>New to FoodChef India? <Link to="/register" state={{from :location?.state?.from}} className='text-violet-600 font-bold underline'> Register</Link></small>
           </label>
@@ -70,7 +83,7 @@ const {signInUserWithEmail} = useContext(AuthContext);
           <hr className='inline-block w-full border-1 border-red-400' /> <span className='mx-3 font-bold'> Or </span> <hr className='inline-block border-1 w-full border-red-400' />
         </div>
 
-        <button className='btn normal-case bg-white mb-1   text-black rounded hover:bg-slate-200 google-btn-shadow border-0'> <img className='w-6 me-2' src={GoogleImg} alt="" /> Login with Google</button>
+        <button onClick={handleGoogleLogin} className='btn normal-case bg-white mb-1   text-black rounded hover:bg-slate-200 google-btn-shadow border-0'> <img className='w-6 me-2' src={GoogleImg} alt="" /> Login with Google</button>
 
         <button className='btn normal-case text-white mb-1   bg-black rounded  shadow-sm border-0'> <BsGithub className=' text-2xl me-2'  /> Login with GitHub</button>
 
