@@ -6,8 +6,11 @@ import { RiShieldKeyholeFill } from "react-icons/ri";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleImg from '../../assets/icons/google.png';
 import { AuthContext } from '../../providers/AuthProviders';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+  const notify = () => toast.error("Sorry 😓, Facebook login isn't working. Please try others");
 
 const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = useContext(AuthContext);
   const navigate = useNavigate();
@@ -100,7 +103,8 @@ const {signInUserWithEmail, loginRegisterWithGoogle, loginRegisterWithGitHub} = 
 
         <button onClick={handleGitHubLogin} className='btn normal-case text-white mb-1   bg-black rounded  shadow-sm border-0'> <BsGithub className=' text-2xl me-2'  /> Login with GitHub</button>
 
-        <button className='btn normal-case bg-blue-600 mb-1  text-white rounded hover:bg-blue-500  shadow-sm border-0'> <FaFacebookF className=' text-2xl me-1'  /> Login with Facebook</button>
+        <button onClick={notify} className='btn normal-case bg-blue-600 mb-1  text-white rounded hover:bg-blue-500  shadow-sm border-0'> <FaFacebookF className=' text-2xl me-1'  /> Login with Facebook</button>
+        <ToastContainer theme="dark" />
 
       </form>
     </div>
