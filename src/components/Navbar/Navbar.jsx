@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
-
+import {FiLogIn} from "react-icons/fi";
 const Navbar = () => {
   const {user, chefID, logOut} = useContext(AuthContext);
 
@@ -18,7 +18,7 @@ const Navbar = () => {
     <div className="container mx-auto  shadow-md  mb-2 sticky z-50   top-0">
       <div className="navbar bg-base-100 rounded ">
         <div className="md:navbar-start">
-          <div className="dropdown">
+          <div className="dropdown ">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,20 +37,22 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact font-bold dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact font-bold dropdown-content mt-3 p-2 google-btn-shadow bg-base-100 rounded-xl w-52"
             >
               {/* ------------Styles of Small devices--------------- */}
               <li>
-                <div
-                  className="tooltip tooltip-bottom tooltip-primary"
+                    {
+                  user && <div
+                  className="tooltip tooltip-bottom tooltip-success"
                   data-tip={user?.displayName}
                 >
                   <div className="avatar online mx-2">
                     <div className="w-12 rounded-full">
-                      <img src={user?.photoURL} />
+                    <img src={user?.photoURL} />
                     </div>
                   </div>
                 </div>
+                }
               </li>
               <li>
                 <NavLink to="/home">Home</NavLink>
@@ -65,6 +67,16 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink to="/blogs">Blog</NavLink>
+              </li>
+
+              <li>
+                  {
+                user ? <li className="bg-red-500 text-white mt-3 uppercase" onClick={handleLogOut} >
+               Logout
+              </li> : <NavLink to="/login" >
+                Login
+              </NavLink>
+              }
               </li>
               
             </ul>
