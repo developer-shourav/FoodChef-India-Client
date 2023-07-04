@@ -92,7 +92,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "text-red-500 bg-transparent" : ""
+                  isActive ? "text-red-500 " : ""
                 }
                 to="/home"
               >

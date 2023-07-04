@@ -6,6 +6,7 @@ import MenuCard from "../../components/MenuCard/MenuCard";
 import FoodGallery from "../../components/FoodGallery/FoodGallery";
 import StatusBar from "../../components/StatusBar/StatusBar";
 import BrandsListMarquee from "../../components/BrandsListMarquee/BrandsListMarquee";
+import { ScrollRestoration } from "react-router-dom";
 
 
 const Home = () => {
@@ -55,7 +56,7 @@ const Home = () => {
       <StatusBar> </StatusBar>
 
       <BrandsListMarquee> </BrandsListMarquee>
-      
+      <ScrollRestoration> </ScrollRestoration>
     </div>
   );
 };

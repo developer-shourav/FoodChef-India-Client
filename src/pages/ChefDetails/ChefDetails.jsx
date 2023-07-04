@@ -67,6 +67,7 @@ const ChefDetails = () => {
 
              </div>
             </div>
+            
         </div>
     );
 };
