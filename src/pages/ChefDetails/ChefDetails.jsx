@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { ScrollRestoration, useLoaderData, useParams } from 'react-router-dom';
 import {AiFillHeart} from 'react-icons/ai';
 import {GiBowlOfRice} from 'react-icons/gi';
 import RecipeCard from '../../components/RecipeCard/RecipeCard';
@@ -67,7 +67,7 @@ const ChefDetails = () => {
 
              </div>
             </div>
-            
+            <ScrollRestoration> </ScrollRestoration>
         </div>
     );
 };

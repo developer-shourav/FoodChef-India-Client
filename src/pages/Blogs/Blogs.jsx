@@ -1,7 +1,7 @@
 import React from "react";
 import questionImg from '../../assets/Blog-img/question.jpg'
 import Blog from "../../components/Blog/Blog";
-import { useLoaderData } from "react-router-dom";
+import { ScrollRestoration, useLoaderData } from "react-router-dom";
 import Pdf from 'react-to-pdf';
 const ref = React.createRef();
 const Blogs = () => {
@@ -25,6 +25,7 @@ const Blogs = () => {
         </div>
 
       </div>
+      <ScrollRestoration> </ScrollRestoration>
     </div>
   );
 };

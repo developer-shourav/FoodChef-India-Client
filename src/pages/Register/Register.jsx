@@ -3,7 +3,7 @@ import { BsPersonFillAdd, BsGithub } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import RegisterImg from "../../assets/svg/register.svg";
 import { AiOutlineUserAdd } from "react-icons/ai";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, ScrollRestoration, useLocation, useNavigate } from "react-router-dom";
 import GoogleImg from "../../assets/icons/google.png";
 import { AuthContext } from "../../providers/AuthProviders";
 import { updateProfile } from "firebase/auth";
@@ -227,6 +227,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <ScrollRestoration> </ScrollRestoration>
     </div>
   );
 };
